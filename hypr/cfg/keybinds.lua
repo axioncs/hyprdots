@@ -43,7 +43,7 @@ hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
 -- ── Noctalia binds ───────────────────────────────────────────────────────────
 hl.bind("ALT + space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind(mod .. " + I", hl.dsp.exec_cmd("noctalia msg settings-toggle"))
-hl.bind("CTRL + space", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
+hl.bind(mod .. "+ space", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind(mod .. " + SHIFT + X", hl.dsp.exec_cmd("noctalia msg session lock"))
 hl.bind(mod .. " + ALT + X", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind(mod .. " + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))

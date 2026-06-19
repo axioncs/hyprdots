@@ -6,6 +6,16 @@ hl.workspace_rule({ workspace = "3", monitor = "eDP-1", persistent = true })
 hl.workspace_rule({ workspace = "4", monitor = "eDP-1", persistent = true })
 hl.workspace_rule({ workspace = "5", monitor = "eDP-1", persistent = true })
 
+hl.layer_rule({
+    name = "noctalia",
+    match = {
+        namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$",
+    },
+    ignore_alpha = 0.5,
+    blur = true,
+    blur_popups = true,
+})
+
 hl.workspace_rule({
     workspace        = "special:discord",
     on_created_empty = "discord",
@@ -67,12 +77,3 @@ hl.window_rule({
     float = true,
 })
 
-hl.layer_rule({
-    name = "noctalia",
-    match = {
-        namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$",
-    },
-    ignore_alpha = 0.5,
-    blur = true,
-    blur_popups = true,
-})

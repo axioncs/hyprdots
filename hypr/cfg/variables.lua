@@ -20,8 +20,8 @@ V.gaps_in                 = 5
 V.gaps_out                = 10
 
 -- Window styling
-V.opacity                 = 0.90
-V.rounding                = 20
+V.opacity                 = 0.95
+V.rounding                = 15
 
 V.border_size             = 0
 V.active_border_color     = "rgba(7fc8ffee)"
@@ -29,16 +29,17 @@ V.inactive_border_color   = "rgba(50505088)"
 
 -- Blur
 V.blur_enabled            = true
-V.blur_size               = 6
-V.blur_passes             = 4
-V.blur_noise              = 0.02
-V.blur_contrast           = 2.0
-V.blur_xray               = true
+V.blur_xray               = false
+V.blur_special_ws         = false
+V.blur_popups             = true
+V.blur_input_methods      = true
+V.blur_size               = 8
+V.blur_passes             = 2
 
 -- Shadow
 V.shadow_enabled          = false
-V.shadow_range            = 30
-V.shadow_power            = 3
+V.shadow_range            = 15
+V.shadow_power            = 4
 V.shadow_offset           = { 0, 10 }
 V.shadow_color            = 0x70000000 -- ~"#0007"
 
