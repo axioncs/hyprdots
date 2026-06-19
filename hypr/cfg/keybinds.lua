@@ -29,8 +29,8 @@ hl.bind(mod .. " + C", hl.dsp.exec_cmd(V.editor))
 hl.bind(mod .. " + G", hl.dsp.exec_cmd("steam"))
 hl.bind(mod .. " + A", hl.dsp.exec_cmd("twintaillauncher"))
 
-hl.bind("CTRL + " .. mod .. " + A", hl.dsp.exec_cmd("~/.local/bin/hypr-lens"))
-hl.bind("CTRL + " .. mod .. " + Z", hl.dsp.exec_cmd("~/.local/bin/hypr-ocr"))
+hl.bind("CTRL + " .. mod .. " + A", hl.dsp.exec_cmd("~/.config/hypr/bin/hypr-lens"))
+hl.bind("CTRL + " .. mod .. " + Z", hl.dsp.exec_cmd("~/.config/hypr/bin/hypr-ocr"))
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(V.terminal .. " -e btop"))
 
 -- Spotify launch (separate from scratchpad toggle)
