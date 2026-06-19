@@ -33,7 +33,7 @@ V.blur_size               = 6
 V.blur_passes             = 4
 V.blur_noise              = 0.02
 V.blur_contrast           = 2.0
-V.blur_xray               = false
+V.blur_xray               = true
 
 -- Shadow
 V.shadow_enabled          = false
