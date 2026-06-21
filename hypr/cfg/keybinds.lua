@@ -32,6 +32,11 @@ hl.bind(mod .. " + A", hl.dsp.exec_cmd("twintaillauncher"))
 hl.bind("CTRL + " .. mod .. " + A", hl.dsp.exec_cmd("~/.config/hypr/bin/hypr-lens"))
 hl.bind("CTRL + " .. mod .. " + Z", hl.dsp.exec_cmd("~/.config/hypr/bin/hypr-ocr"))
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(V.terminal .. " -e btop"))
+hl.bind(mod .. " + space", hl.dsp.workspace.toggle_special("aria"))
+hl.bind("CTRL + ALT + space",
+    hl.dsp.exec_cmd(
+        "kitty --class aria-chat --title Aria --override 'background=#000000' --override 'background_opacity=0.85' --override 'font_size=10.0' -e fish -c 'hermes'"))
+
 
 -- Spotify launch (separate from scratchpad toggle)
 hl.bind(mod .. " + SHIFT + S", hl.dsp.exec_cmd("env -u DISPLAY spotify"))
@@ -43,14 +48,14 @@ hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
 -- ── Noctalia binds ───────────────────────────────────────────────────────────
 hl.bind("ALT + space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
 hl.bind(mod .. " + I", hl.dsp.exec_cmd("noctalia msg settings-toggle"))
-hl.bind(mod .. "+ space", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
+hl.bind("CTRL + space", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind(mod .. " + SHIFT + X", hl.dsp.exec_cmd("noctalia msg session lock"))
 hl.bind(mod .. " + ALT + X", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind(mod .. " + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 hl.bind(mod .. " + R", hl.dsp.exec_cmd("noctalia msg config-reload"))
 hl.bind(mod .. " + SHIFT + A", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center system"))
 hl.bind(mod .. " + N", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center notifications"))
-hl.bind(mod2 .. " + V", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center audio"))
+hl.bind("ALT + V", hl.dsp.exec_cmd("echo 'start' | nc -N 127.0.0.1 9999"))
 
 -- ── Media controls ────────────────────────────────────────────────────────────
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("noctalia msg volume-up " .. V.volume_step), { locked = true })
@@ -83,7 +88,9 @@ end
 -- ── Window: float / fullscreen / group ───────────────────────────────────────
 hl.bind(mod2 .. " + space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mod2 .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind(mod .. " + SHIFT + C", hl.dsp.group.toggle())
+hl.bind(mod2 .. " + C", hl.dsp.layout("colresize 0.5"))
 
 -- ── Mouse drag / resize ───────────────────────────────────────────────────────
 hl.bind(mod .. " + Z", hl.dsp.window.drag(), { mouse = true })
@@ -120,3 +127,9 @@ pcall(function()
     hl.bind("switch:on:Lid Switch", hl.dsp.dpms({ action = "disable" }), { locked = true })
     hl.bind("switch:off:Lid Switch", hl.dsp.dpms({ action = "enable" }), { locked = true })
 end)
+
+-- Alt+Tab (standard MRU)
+hl.bind("ALT + Tab", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+
+-- Super+Tab (workspace-filtered)
+hl.bind("SUPER + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))

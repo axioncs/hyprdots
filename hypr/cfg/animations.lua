@@ -91,7 +91,7 @@ hl.animation({
 -- ── Layer-shell (panels, notifications, overlays) ────────────────────────────
 hl.animation({
     leaf    = "layersIn",
-    enabled = true,
+    enabled = false,
     speed   = V.anim_layer_speed,
     bezier  = "drift",
     style   = "slide"
@@ -99,7 +99,7 @@ hl.animation({
 
 hl.animation({
     leaf    = "layersOut",
-    enabled = true,
+    enabled = false,
     speed   = V.anim_layer_speed * 0.9,
     bezier  = "snap",
     style   = "fade"

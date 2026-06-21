@@ -21,6 +21,8 @@ V.gaps_out                = 10
 
 -- Window styling
 V.opacity                 = 0.95
+V.opacity_focused           = 1.0
+V.opacity_unfocused         = 0.85
 V.rounding                = 15
 
 V.border_size             = 0
@@ -34,7 +36,7 @@ V.blur_special_ws         = false
 V.blur_popups             = true
 V.blur_input_methods      = true
 V.blur_size               = 8
-V.blur_passes             = 2
+V.blur_passes             = 4
 
 -- Shadow
 V.shadow_enabled          = false
@@ -58,6 +60,8 @@ V.anim_fade_speed         = 2.5
 -- Special workspaces
 V.scratchpad_discord_size = { 1600, 900 } -- fixed px (matches your window rule)
 V.scratchpad_spotify_size = { "80%", "85%" }
+V.scratchpad_aria_size    = { 1344, 900 }
+V.aria_voice_margin       = 20 -- margin for voice overlay in bottom-right
 
 -- Misc
 V.volume_step             = 2 -- percent per media key press

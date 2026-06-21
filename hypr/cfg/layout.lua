@@ -17,6 +17,7 @@ hl.config({
     decoration = {
         rounding = V.rounding,
         rounding_power = 2,
+        dim_special = 0.5,
         shadow = {
             enabled      = V.shadow_enabled,
             range        = V.shadow_range,
