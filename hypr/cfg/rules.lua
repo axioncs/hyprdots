@@ -8,10 +8,10 @@ hl.workspace_rule({ workspace = "5", monitor = "eDP-1", persistent = true })
 
 hl.layer_rule({
     name = "noctalia",
-
     match = {
         namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$",
     },
+    no_anim = true,
     ignore_alpha = 0.5,
     blur = true,
     blur_popups = true,
@@ -23,7 +23,19 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
+    workspace        = "special:btop",
+    on_created_empty = "kitty -e btop",
+})
+
+hl.workspace_rule({
+    workspace        = "special:steam",
+    on_created_empty = "steam",
+})
+
+hl.workspace_rule({
     workspace = "special:aria",
+    on_created_empty =
+    "kitty --class aria-chat --title Aria --override 'background=#000000' --override 'background_opacity=0.85' --override 'font_size=10.0' -e fish -c 'hermes'",
 })
 
 hl.window_rule({
@@ -58,16 +70,40 @@ hl.window_rule({
     size      = V.scratchpad_spotify_size,
 })
 
+-- Steam → special:steam scratchpad
+hl.window_rule({
+    match     = { class = "^(Steam|steam)$" },
+    workspace = "special:steam",
+})
+
 -- ── Application-specific rules ───────────────────────────────────────────────
 
 -- File pickers (Nautilus/GTK) -> float, center, no decoration
 hl.window_rule({
-    match    = { title = "^(Open File|Open Folder|Open|Save|Save As|Export|Import|Choose File|Rename)$" },
+    match    = { title = "^(Open File|Open Files|Open Folder|Open|Save|Save As|Export|Import|Choose File|Rename)$" },
     float    = true,
     center   = true,
     decorate = false,
     opacity  = 1.0,
+    size     = { 1000, 600 },
 })
+
+-- Hyprland Share Picker -> float, center
+hl.window_rule({
+    match  = { class = "hyprland-share-picker" },
+    float  = true,
+    center = true,
+    size   = { 1000, 600 },
+})
+
+-- Zen Browser File Uploads -> float and center
+hl.window_rule({
+    match  = { title = ".*File Upload.*" },
+    float  = true,
+    center = true,
+    size   = { 1000, 600 },
+})
+
 
 
 -- Apps that should always tile (never accidentally float)

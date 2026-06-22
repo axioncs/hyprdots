@@ -19,6 +19,7 @@ hl.env("XCURSOR_THEME", V.cursor_theme)
 hl.env("XCURSOR_SIZE", tostring(V.cursor_size))
 hl.env("HYPRCURSOR_THEME", V.cursor_theme)
 hl.env("HYPRCURSOR_SIZE", tostring(V.cursor_size))
+hl.env("GDK_SCALE", "1.5")
 
 -- ── Cursor behaviour ─────────────────────────────────────────────────────────
 hl.config({
@@ -36,5 +37,15 @@ hl.config({
         focus_on_activate       = true,
         mouse_move_enables_dpms = true,
         key_press_enables_dpms  = true,
+        enable_swallow = true,
+        swallow_regex = "(kitty|Alacritty|foot|ghostty)",
+        animate_manual_resizes = true,
+        animate_mouse_windowdragging = true,
     },
+})
+
+hl.config({
+  xwayland = {
+    force_zero_scaling = true
+  }
 })

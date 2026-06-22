@@ -20,9 +20,9 @@ V.gaps_in                 = 5
 V.gaps_out                = 10
 
 -- Window styling
-V.opacity                 = 0.95
-V.opacity_focused           = 1.0
-V.opacity_unfocused         = 0.85
+V.opacity                 = 0.85
+V.opacity_focused         = 0.85
+V.opacity_unfocused       = 0.80
 V.rounding                = 15
 
 V.border_size             = 0
@@ -35,15 +35,14 @@ V.blur_xray               = false
 V.blur_special_ws         = false
 V.blur_popups             = true
 V.blur_input_methods      = true
-V.blur_size               = 8
+V.blur_size               = 6
 V.blur_passes             = 4
 
 -- Shadow
 V.shadow_enabled          = false
-V.shadow_range            = 15
-V.shadow_power            = 4
-V.shadow_offset           = { 0, 10 }
-V.shadow_color            = 0x70000000 -- ~"#0007"
+V.shadow_range            = 4
+V.shadow_power            = 3
+V.shadow_color            = 0xee1a1a1a
 
 -- Cursor
 V.cursor_theme            = "Bibata-Modern-Ice"
