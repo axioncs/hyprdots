@@ -149,3 +149,8 @@ hl.window_rule({
     match = { class = "imv" },
     float = true,
 })
+
+hl.window_rule({
+    match = { class = "Waydroid" },
+    fullscreen = true,
+})

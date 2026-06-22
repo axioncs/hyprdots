@@ -72,10 +72,10 @@ hl.bind(mod .. " + Q", hl.dsp.window.close())
 hl.bind(mod2 .. " + Q", hl.dsp.window.kill())
 
 --  Workspace: switch
-hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mod2 .. " + mouse_down", hl.dsp.window.move({ workspace = "e+1" }))
-hl.bind(mod2 .. " + mouse_up", hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mod2 .. " + mouse_down", hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(mod2 .. " + mouse_up", hl.dsp.window.move({ workspace = "e+1" }))
 
 for i = 1, 9 do
     hl.bind(mod .. " + " .. i, hl.dsp.focus({ workspace = i }))
@@ -92,9 +92,20 @@ hl.bind(mod2 .. " + C", hl.dsp.layout("colresize 0.5"))
 --  Mouse drag / resize
 hl.bind(mod .. " + Z", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. " + X", hl.dsp.window.resize(), { mouse = true })
--- Standard mouse-button variants (LMB = move, RMB = resize):
+
+-- Window actions
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(mod .. " + SHIFT + mouse_down", hl.dsp.focus({ direction = "left" }))
+hl.bind(mod .. " + SHIFT + mouse_up", hl.dsp.focus({ direction = "right" }))
+hl.bind(mod .. " + left", hl.dsp.focus({ direction = "left" }))
+hl.bind(mod .. " + right", hl.dsp.focus({ direction = "right" }))
+hl.bind(mod .. " + up", hl.dsp.focus({ direction = "up" }))
+hl.bind(mod .. " + down", hl.dsp.focus({ direction = "down" }))
+hl.bind(mod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 --  Resize submap
 hl.bind(mod2 .. " + R", function() hl.submap("resize") end)
@@ -129,4 +140,4 @@ end)
 hl.bind("ALT + Tab", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
 
 -- Super+Tab (workspace-filtered)
-hl.bind("SUPER + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))
+hl.bind(mod .. " + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))
