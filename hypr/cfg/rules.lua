@@ -23,6 +23,11 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
+    workspace        = "special:spotify",
+    on_created_empty = "env -u DISPLAY spotify",
+})
+
+hl.workspace_rule({
     workspace        = "special:btop",
     on_created_empty = "kitty -e btop",
 })
