@@ -41,6 +41,7 @@ hl.bind(mod .. " + D", hl.dsp.workspace.toggle_special("discord"))
 hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
 hl.bind(mod .. " + G", hl.dsp.workspace.toggle_special("steam"))
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.workspace.toggle_special("btop"))
+hl.bind(mod .. " + SHIFT + Q", hl.dsp.workspace.toggle_special("qbittorrent"))
 
 --  Noctalia binds
 hl.bind("ALT + space", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
@@ -108,9 +109,6 @@ hl.bind(mod .. " + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mod .. " + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mod .. " + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
-
---  Resize submap
-hl.bind(mod2 .. " + R", function() hl.submap("resize") end)
 
 --  Layout-specific utility binds
 hl.bind(mod2 .. " + P", hl.dsp.window.pseudo())           -- dwindle: pseudo-tile

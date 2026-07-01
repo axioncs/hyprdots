@@ -43,6 +43,11 @@ hl.workspace_rule({
     "kitty --class aria-chat --title Aria --override 'background=#000000' --override 'background_opacity=0.85' --override 'font_size=10.0' -e fish -c 'hermes'",
 })
 
+hl.workspace_rule({
+    workspace = "special:qbittorrent",
+    on_created_empty = "qbittorrent",
+})
+
 hl.window_rule({
     match    = { class = ".*" },
     rounding = V.rounding,
@@ -63,8 +68,7 @@ hl.window_rule({
 hl.window_rule({
     match     = { class = "^aria-chat$" },
     workspace = "special:aria",
-    float     = true,
-    size      = V.scratchpad_aria_size,
+    maximize  = true,
 })
 
 -- Spotify → special:spotify scratchpad
@@ -108,15 +112,6 @@ hl.window_rule({
     center = true,
     size   = { 1000, 600 },
 })
-
-
-
--- Apps that should always tile (never accidentally float)
-
--- hl.window_rule({
---     match = { class = "^(helium|twintaillauncher|dev\\.zed\\.Zed|hayase)$" },
---     float = false,
--- })
 
 -- Steam: float most windows, but keep the main client tiled
 hl.window_rule({
