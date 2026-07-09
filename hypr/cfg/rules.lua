@@ -152,6 +152,16 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "^(twintaillauncher|hayase)$" },
+    match = { class = "steam", title = "^Steam Big Picture Mode$" },
+    fullscreen = true,
+})
+
+hl.window_rule({
+    match = { class = "^(twintaillauncher|hayase|Vortex)$" },
     maximize = true,
+})
+
+hl.window_rule({
+    match = { class = "^(Vortex)$" },
+    suppress_event = "activate",
 })
