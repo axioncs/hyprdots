@@ -1,0 +1,73 @@
+# ===== Your custom e-prefix chords (open CURRENT directory in external apps) =====
+[[mgr.prepend_keymap]]
+on   = ["e", "z"]
+run  = "shell 'zeditor \"$PWD\" &'"
+desc = "Open current directory in Zed"
+
+[[mgr.prepend_keymap]]
+on   = ["e", "t"]
+run  = "shell 'kitty --directory \"$PWD\" &'"
+desc = "Open current directory in Kitty"
+
+[[mgr.prepend_keymap]]
+on   = ["e", "m"]
+run  = "shell 'mpv \"$PWD\" &'"
+desc = "Open current directory in mpv"
+
+# ===== Plugin bindings =====
+[[mgr.prepend_keymap]]
+on   = "l"
+run  = "plugin smart-enter"
+desc = "Enter directory or open file (smart-enter)"
+
+[[mgr.prepend_keymap]]
+on   = "p"
+run  = "plugin smart-paste"
+desc = "Paste into hovered dir or CWD (smart-paste)"
+
+[[mgr.prepend_keymap]]
+on   = ["c", "m"]
+run  = "plugin chmod"
+desc = "Chmod selected files"
+
+# diff on e f (NOT d f) so d stays solo = trash
+[[mgr.prepend_keymap]]
+on   = ["e", "f"]
+run  = "plugin diff"
+desc = "Diff selected against hovered file"
+
+[[mgr.prepend_keymap]]
+on   = ["e", "s"]
+run  = "plugin what-size"
+desc = "Calculate size of selection or CWD"
+
+# ===== pref-by-location: chain --save onto sort/hidden/linemode so per-folder prefs persist =====
+[[mgr.prepend_keymap]]
+on   = "."
+run  = ["hidden toggle", "plugin pref-by-location -- save"]
+desc = "Toggle hidden + remember per-location"
+
+[[mgr.prepend_keymap]]
+on   = ["m", "m"]
+run  = ["linemode mtime", "plugin pref-by-location -- save"]
+desc = "Linemode mtime + remember"
+
+[[mgr.prepend_keymap]]
+on   = [",", "m"]
+run  = ["sort mtime --reverse=no", "linemode mtime", "plugin pref-by-location -- save"]
+desc = "Sort by mtime + remember"
+
+[[mgr.prepend_keymap]]
+on   = [",", "t"]
+run  = "plugin pref-by-location -- toggle"
+desc = "Toggle pref-by-location auto-save"
+
+[[mgr.prepend_keymap]]
+on   = [",", "d"]
+run  = "plugin pref-by-location -- disable"
+desc = "Disable pref-by-location auto-save"
+
+[[mgr.prepend_keymap]]
+on   = [",", "R"]
+run  = "plugin pref-by-location -- reset"
+desc = "Reset current folder's pref-by-location"

@@ -4,7 +4,7 @@ local V                   = {}
 V.terminal                = "kitty"
 V.browser                 = "zen-browser"
 V.editor                  = "zeditor"
-V.fileManager             = "nautilus"
+V.fileManager             = "kitty -e fish -ic y"
 V.vpn                     = "surfshark"
 
 -- Mod key

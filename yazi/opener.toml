@@ -1,0 +1,13 @@
+# Named opener: HTML/XHTML → Zen browser
+[opener]
+zen = [
+  { run = 'zen-browser "$@"', desc = "Open in Zen", orphan = true },
+]
+
+# Route HTML/XHTML to Zen, prepended so it wins over Yazi's default text opener
+[open]
+prepend_rules = [
+  { url = "*.html",  use = "zen" },
+  { url = "*.htm",   use = "zen" },
+  { url = "*.xhtml", use = "zen" },
+]

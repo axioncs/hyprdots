@@ -23,6 +23,11 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
+    workspace        = "special:equibop",
+    on_created_empty = "equibop",
+})
+
+hl.workspace_rule({
     workspace        = "special:spotify",
     on_created_empty = "env -u DISPLAY spotify",
 })
@@ -44,6 +49,11 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
+    workspace        = "special:vpn",
+    on_created_empty = V.vpn,
+})
+
+hl.workspace_rule({
     workspace = "special:qbittorrent",
     on_created_empty = "qbittorrent",
 })
@@ -56,10 +66,18 @@ hl.window_rule({
 
 -- ── Special workspace window rules ───────────────────────────────────────────
 
--- Discord / Equibop → special:discord scratchpad
+-- Discord
 hl.window_rule({
-    match     = { class = "^(equibop|discord)$" },
+    match     = { class = "^(discord)$" },
     workspace = "special:discord",
+    float     = true,
+    size      = V.scratchpad_discord_size,
+})
+
+-- Equibop
+hl.window_rule({
+    match     = { class = "^(equibop)$" },
+    workspace = "special:equibop",
     float     = true,
     size      = V.scratchpad_discord_size,
 })
@@ -87,7 +105,7 @@ hl.window_rule({
 
 -- ── Application-specific rules ───────────────────────────────────────────────
 
--- File pickers (Nautilus/GTK) -> float, center, no decoration
+-- File pickers
 hl.window_rule({
     match    = { title = "^(Open File|Location|Open Files|Open Folder|Open|Save|Save As|Export|Import|Choose File|Rename)$" },
     float    = true,
@@ -97,7 +115,7 @@ hl.window_rule({
     size     = { 1000, 600 },
 })
 
--- Hyprland Share Picker -> float, center
+-- Hyprland Share Picker
 hl.window_rule({
     match  = { class = "hyprland-share-picker" },
     float  = true,
@@ -105,12 +123,19 @@ hl.window_rule({
     size   = { 1000, 600 },
 })
 
--- Zen Browser File Uploads -> float and center
+-- Zen Browser
 hl.window_rule({
     match  = { title = ".*File Upload.*" },
     float  = true,
     center = true,
     size   = { 1000, 600 },
+})
+
+hl.window_rule({
+    match    = { class = "zen", title = "^Picture-in-Picture$" },
+    float    = true,
+    move     = { "monitor_w - window_w - 10", "monitor_h - window_h - 10" },
+    size     = { 320, 200 },
 })
 
 -- Steam: float most windows, but keep the main client tiled

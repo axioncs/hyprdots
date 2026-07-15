@@ -38,7 +38,9 @@ hl.bind("ALT + A", hl.dsp.exec_cmd("echo 'start' | nc -N 127.0.0.1 9999"))
 
 --  Special workspaces (scratchpads)
 hl.bind(mod .. " + D", hl.dsp.workspace.toggle_special("discord"))
+hl.bind(mod2 .. " + D", hl.dsp.workspace.toggle_special("equibop"))
 hl.bind(mod .. " + S", hl.dsp.workspace.toggle_special("spotify"))
+hl.bind(mod .. " + SHIFT + S", hl.dsp.workspace.toggle_special("vpn"))
 hl.bind(mod .. " + G", hl.dsp.workspace.toggle_special("steam"))
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.workspace.toggle_special("btop"))
 hl.bind(mod .. " + SHIFT + Q", hl.dsp.workspace.toggle_special("qbittorrent"))
@@ -155,6 +157,16 @@ end)
 pcall(function()
     hl.bind("switch:on:Lid Switch", hl.dsp.dpms({ action = "disable" }), { locked = true })
     hl.bind("switch:off:Lid Switch", hl.dsp.dpms({ action = "enable" }), { locked = true })
+end)
+
+--  Update dotfiles (git pull + re-symlink via install.fish --update)
+hl.bind(mod .. " + SHIFT + U", function()
+    hl.dsp.exec_cmd("noctalia msg notification-show 'Hyprdots -- Updating dotfiles…'")
+    hl.dsp.exec_cmd(
+        "fish ~/.local/share/hyprdots/install.fish --update" ..
+        " && noctalia msg notification-show 'Hyprdots -- Dotfiles updated — reload with SUPER+R'" ..
+        " || noctalia msg notification-show 'Hyprdots -- Update failed (see terminal)'"
+    )
 end)
 
 -- Alt+Tab (standard MRU)
