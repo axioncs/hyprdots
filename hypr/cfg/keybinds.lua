@@ -160,14 +160,9 @@ pcall(function()
 end)
 
 --  Update dotfiles (git pull + re-symlink via install.fish --update)
-hl.bind(mod .. " + SHIFT + U", function()
-    hl.dsp.exec_cmd("noctalia msg notification-show 'Hyprdots -- Updating dotfiles…'")
-    hl.dsp.exec_cmd(
-        "fish ~/.local/share/hyprdots/install.fish --update" ..
-        " && noctalia msg notification-show 'Hyprdots -- Dotfiles updated — reload with SUPER+R'" ..
-        " || noctalia msg notification-show 'Hyprdots -- Update failed (see terminal)'"
-    )
-end)
+hl.bind(mod .. " + SHIFT + U", hl.dsp.exec_cmd(
+    "sh -c 'fish ~/.local/share/hyprdots/install.fish --update &'"
+))
 
 -- Alt+Tab (standard MRU)
 hl.bind("ALT + Tab", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))

@@ -7,13 +7,13 @@
 #   fish install.fish -u         # same as --update
 #   fish install.fish --help     # show this help
 
-set -l REPO (dirname (realpath (status filename)))
-set -l CONFIG "$HOME/.config"
-set -l HYPRLAND_DEPS hyprland noctalia-git snappy-switcher kitty zen-browser zed helix fish starship yazi btop fastfetch mpv aria2 yt-dlp spicetify-cli grimblast-git tesseract wireplumber papirus-icon-theme bibata-cursor-theme-bin noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd
-set -l BUILD_DEPS base-devel git
+set -g REPO (dirname (realpath (status filename)))
+set -g CONFIG "$HOME/.config"
+set -g HYPRLAND_DEPS hyprland noctalia-git snappy-switcher kitty zen-browser zed helix fish starship yazi btop fastfetch mpv aria2 yt-dlp spicetify-cli grimblast-git tesseract wireplumber papirus-icon-theme bibata-cursor-theme-bin noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd
+set -g BUILD_DEPS base-devel git
 
 # Items managed by this repo (dir or file, relative to REPO)
-set -l ITEMS hypr yazi aria2 btop helix mpv fastfetch fish gtk-3.0 gtk-4.0 kitty spicetify yt-dlp zathura zed starship.toml
+set -g ITEMS hypr yazi aria2 btop helix mpv fastfetch fish gtk-3.0 gtk-4.0 kitty spicetify yt-dlp zathura zed starship.toml
 
 function print_help
     echo "Hyprdots installer"
@@ -104,12 +104,15 @@ else
 end
 
 # --- update repo ---
+set -l updated 0
 if test $UPDATE -eq 1
     echo "==> git pull in $REPO"
     set -l pull_out (git -C "$REPO" pull --ff-only 2>&1)
     echo $pull_out
     if string match -q '*Already up to date*' $pull_out
         notify "No update available — already up to date."
+    else
+        set updated 1
     end
 end
 
@@ -123,7 +126,9 @@ echo
 if test $UPDATE -eq 0
     notify "Install complete."
     echo "Done. Log out/in or run 'SUPER + R' to reload Hyprland."
-else
+else if test $updated -eq 1
     notify "Update complete."
     echo "Update complete. Run 'SUPER + R' to reload Hyprland."
+else
+    echo "Update complete (no changes). Run 'SUPER + R' to reload Hyprland."
 end
