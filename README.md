@@ -185,4 +185,4 @@ Symlinked into `~/.config` from this repo:
 
 `hypr` · `yazi` · `aria2` · `btop` · `helix` · `mpv` · `fastfetch` · `fish` · `gtk-3.0` · `gtk-4.0` · `kitty` · `spicetify` · `yt-dlp` · `zathura` · `zed` · `starship.toml`
 
-See `yazi/YAZI.md` for the full Yazi usage guide.
+See `yazi/README.md` for the full Yazi usage guide.

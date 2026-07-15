@@ -106,7 +106,11 @@ end
 # --- update repo ---
 if test $UPDATE -eq 1
     echo "==> git pull in $REPO"
-    git -C "$REPO" pull --ff-only
+    set -l pull_out (git -C "$REPO" pull --ff-only 2>&1)
+    echo $pull_out
+    if string match -q '*Already up to date*' $pull_out
+        notify "No update available — already up to date."
+    end
 end
 
 # --- symlink everything ---
@@ -117,9 +121,9 @@ end
 
 echo
 if test $UPDATE -eq 0
-    notify "Install complete. Log out/in or run 'SUPER + R' to reload Hyprland."
+    notify "Install complete."
     echo "Done. Log out/in or run 'SUPER + R' to reload Hyprland."
 else
-    notify "Update complete. Run 'SUPER + R' to reload Hyprland."
+    notify "Update complete."
     echo "Update complete. Run 'SUPER + R' to reload Hyprland."
 end
