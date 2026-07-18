@@ -9,11 +9,6 @@ on   = ["e", "t"]
 run  = "shell 'kitty --directory \"$PWD\" &'"
 desc = "Open current directory in Kitty"
 
-[[mgr.prepend_keymap]]
-on   = ["e", "m"]
-run  = "shell 'mpv \"$PWD\" &'"
-desc = "Open current directory in mpv"
-
 # ===== Plugin bindings =====
 [[mgr.prepend_keymap]]
 on   = "l"
@@ -21,53 +16,130 @@ run  = "plugin smart-enter"
 desc = "Enter directory or open file (smart-enter)"
 
 [[mgr.prepend_keymap]]
-on   = "p"
-run  = "plugin smart-paste"
-desc = "Paste into hovered dir or CWD (smart-paste)"
-
-[[mgr.prepend_keymap]]
 on   = ["c", "m"]
 run  = "plugin chmod"
 desc = "Chmod selected files"
-
-# diff on e f (NOT d f) so d stays solo = trash
-[[mgr.prepend_keymap]]
-on   = ["e", "f"]
-run  = "plugin diff"
-desc = "Diff selected against hovered file"
 
 [[mgr.prepend_keymap]]
 on   = ["e", "s"]
 run  = "plugin what-size"
 desc = "Calculate size of selection or CWD"
 
-# ===== pref-by-location: chain --save onto sort/hidden/linemode so per-folder prefs persist =====
+# ===== pref-by-location: sort/linemode/hidden persistence =====
+# Toggle Hidden
 [[mgr.prepend_keymap]]
 on   = "."
 run  = ["hidden toggle", "plugin pref-by-location -- save"]
-desc = "Toggle hidden + remember per-location"
+desc = "Toggle the visibility of hidden files"
+
+# Linemode
+[[mgr.prepend_keymap]]
+on   = ["m", "s"]
+run  = ["linemode size", "plugin pref-by-location -- save"]
+desc = "Linemode: size"
+
+[[mgr.prepend_keymap]]
+on   = ["m", "p"]
+run  = ["linemode permissions", "plugin pref-by-location -- save"]
+desc = "Linemode: permissions"
+
+[[mgr.prepend_keymap]]
+on   = ["m", "b"]
+run  = ["linemode btime", "plugin pref-by-location -- save"]
+desc = "Linemode: btime"
 
 [[mgr.prepend_keymap]]
 on   = ["m", "m"]
 run  = ["linemode mtime", "plugin pref-by-location -- save"]
-desc = "Linemode mtime + remember"
+desc = "Linemode: mtime"
 
 [[mgr.prepend_keymap]]
-on   = [",", "m"]
-run  = ["sort mtime --reverse=no", "linemode mtime", "plugin pref-by-location -- save"]
-desc = "Sort by mtime + remember"
+on   = ["m", "o"]
+run  = ["linemode owner", "plugin pref-by-location -- save"]
+desc = "Linemode: owner"
 
+[[mgr.prepend_keymap]]
+on   = ["m", "n"]
+run  = ["linemode none", "plugin pref-by-location -- save"]
+desc = "Linemode: none"
+
+# Sorting / pref-by-location controls
 [[mgr.prepend_keymap]]
 on   = [",", "t"]
 run  = "plugin pref-by-location -- toggle"
-desc = "Toggle pref-by-location auto-save"
+desc = "Toggle auto-save preferences"
 
 [[mgr.prepend_keymap]]
 on   = [",", "d"]
 run  = "plugin pref-by-location -- disable"
-desc = "Disable pref-by-location auto-save"
+desc = "Disable auto-save preferences"
 
 [[mgr.prepend_keymap]]
 on   = [",", "R"]
-run  = "plugin pref-by-location -- reset"
-desc = "Reset current folder's pref-by-location"
+run  = ["plugin pref-by-location -- reset"]
+desc = "Reset preference of cwd"
+
+[[mgr.prepend_keymap]]
+on   = [",", "m"]
+run  = ["sort mtime --reverse=no", "linemode mtime", "plugin pref-by-location -- save"]
+desc = "Sort by modified time"
+
+[[mgr.prepend_keymap]]
+on   = [",", "M"]
+run  = ["sort mtime --reverse", "linemode mtime", "plugin pref-by-location -- save"]
+desc = "Sort by modified time (reverse)"
+
+[[mgr.prepend_keymap]]
+on   = [",", "b"]
+run  = ["sort btime --reverse=no", "linemode btime", "plugin pref-by-location -- save"]
+desc = "Sort by birth time"
+
+[[mgr.prepend_keymap]]
+on   = [",", "B"]
+run  = ["sort btime --reverse", "linemode btime", "plugin pref-by-location -- save"]
+desc = "Sort by birth time (reverse)"
+
+[[mgr.prepend_keymap]]
+on   = [",", "e"]
+run  = ["sort extension --reverse=no", "plugin pref-by-location -- save"]
+desc = "Sort by extension"
+
+[[mgr.prepend_keymap]]
+on   = [",", "E"]
+run  = ["sort extension --reverse", "plugin pref-by-location -- save"]
+desc = "Sort by extension (reverse)"
+
+[[mgr.prepend_keymap]]
+on   = [",", "a"]
+run  = ["sort alphabetical --reverse=no", "plugin pref-by-location -- save"]
+desc = "Sort alphabetically"
+
+[[mgr.prepend_keymap]]
+on   = [",", "A"]
+run  = ["sort alphabetical --reverse", "plugin pref-by-location -- save"]
+desc = "Sort alphabetically (reverse)"
+
+[[mgr.prepend_keymap]]
+on   = [",", "n"]
+run  = ["sort natural --reverse=no", "plugin pref-by-location -- save"]
+desc = "Sort naturally"
+
+[[mgr.prepend_keymap]]
+on   = [",", "N"]
+run  = ["sort natural --reverse", "plugin pref-by-location -- save"]
+desc = "Sort naturally (reverse)"
+
+[[mgr.prepend_keymap]]
+on   = [",", "s"]
+run  = ["sort size --reverse=no", "linemode size", "plugin pref-by-location -- save"]
+desc = "Sort by size"
+
+[[mgr.prepend_keymap]]
+on   = [",", "S"]
+run  = ["sort size --reverse", "linemode size", "plugin pref-by-location -- save"]
+desc = "Sort by size (reverse)"
+
+[[mgr.prepend_keymap]]
+on   = [",", "r"]
+run  = ["sort random --reverse=no", "plugin pref-by-location -- save"]
+desc = "Sort randomly"

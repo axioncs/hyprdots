@@ -326,6 +326,7 @@ local update_ui_pref = ya.sync(function(_, pref, return_type)
 	-- sort
 	local sort_pref = pref.sort
 	if sort_pref then
+		sort_pref = deepClone(sort_pref)
 		ya.dict_merge(sort_pref, {
 			tab = (type(cx.active.id) == "number" or type(cx.active.id) == "string") and cx.active.id
 				or cx.active.id.value,

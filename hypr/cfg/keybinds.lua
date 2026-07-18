@@ -26,14 +26,16 @@ hl.bind(mod .. " + T", hl.dsp.exec_cmd(V.terminal))
 hl.bind(mod .. " + E", hl.dsp.exec_cmd(V.fileManager))
 hl.bind(mod .. " + W", hl.dsp.exec_cmd(V.browser))
 hl.bind(mod .. " + C", hl.dsp.exec_cmd(V.editor))
+hl.bind(mod .. " + M", hl.dsp.exec_cmd("stremio"))
 hl.bind(mod .. " + H", hl.dsp.exec_cmd("hayase"))
+hl.bind(mod2 .. " + G", hl.dsp.exec_cmd("faugus-launcher"))
 
 --  Hypr Scipts
 hl.bind("CTRL + " .. mod .. " + A", hl.dsp.exec_cmd("~/.config/hypr/bin/hypr-lens"))
 hl.bind("CTRL + " .. mod .. " + Z", hl.dsp.exec_cmd("~/.config/hypr/bin/hypr-ocr"))
 
 --  Aria AI Assistant
-hl.bind(mod .. " + space", hl.dsp.workspace.toggle_special("aria"))
+hl.bind(mod .. " + A", hl.dsp.workspace.toggle_special("aria"))
 hl.bind("ALT + A", hl.dsp.exec_cmd("echo 'start' | nc -N 127.0.0.1 9999"))
 
 --  Special workspaces (scratchpads)
@@ -52,7 +54,7 @@ hl.bind(mod .. " + SHIFT + X", hl.dsp.exec_cmd("noctalia msg session lock"))
 hl.bind(mod2 .. " + X", hl.dsp.exec_cmd("noctalia msg panel-toggle session"))
 hl.bind(mod .. " + V", hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard"))
 hl.bind(mod .. " + R", hl.dsp.exec_cmd("noctalia msg config-reload"))
-hl.bind(mod .. " + A", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
+hl.bind(mod .. " + space", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center"))
 hl.bind(mod .. " + SHIFT + A", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center system"))
 hl.bind(mod .. " + SHIFT + W", hl.dsp.exec_cmd("noctalia msg panel-toggle noctalia/wallhaven:browser"))
 hl.bind(mod .. " + N", hl.dsp.exec_cmd("noctalia msg panel-toggle control-center notifications"))
