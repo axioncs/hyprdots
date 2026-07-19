@@ -32,7 +32,7 @@
     },
     {
       "type": "packages",
-      "format": "{pacman} (pacman), {flatpak-user} (flatpak)",
+      "format": "{pacman} (pacman)",
       "key": " ",
       "keyColor": "33",
     },
