@@ -182,7 +182,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "^(twintaillauncher|com.stremio.stremio|hayase|Vortex)$" },
+    match = { class = "^(twintaillauncher|stremio-enhanced|hayase|Vortex)$" },
     maximize = true,
 })
 

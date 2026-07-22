@@ -1,4 +1,4 @@
-set default-bg              "rgba(19, 19, 27, 0.8)"
+set default-bg              "rgba(0, 0, 0, 0.8)"
 set default-fg              "#e4e1ed"
 set recolor-lightcolor      "rgba(0,0,0,0)"
 set recolor-darkcolor       "#e4e1ed"

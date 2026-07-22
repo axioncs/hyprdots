@@ -26,7 +26,7 @@ hl.bind(mod .. " + T", hl.dsp.exec_cmd(V.terminal))
 hl.bind(mod .. " + E", hl.dsp.exec_cmd(V.fileManager))
 hl.bind(mod .. " + W", hl.dsp.exec_cmd(V.browser))
 hl.bind(mod .. " + C", hl.dsp.exec_cmd(V.editor))
-hl.bind(mod .. " + M", hl.dsp.exec_cmd("stremio"))
+hl.bind(mod .. " + M", hl.dsp.exec_cmd("stremio-enhanced"))
 hl.bind(mod .. " + H", hl.dsp.exec_cmd("hayase"))
 hl.bind(mod2 .. " + G", hl.dsp.exec_cmd("faugus-launcher"))
 
@@ -115,7 +115,6 @@ hl.bind(mod2 .. " + space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mod2 .. " + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind(mod .. " + SHIFT + C", hl.dsp.group.toggle())
-hl.bind(mod2 .. " + C", hl.dsp.layout("colresize 0.5"))
 
 --  Mouse drag / resize
 hl.bind(mod .. " + Z", hl.dsp.window.drag(), { mouse = true })
