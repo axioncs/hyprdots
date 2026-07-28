@@ -107,7 +107,7 @@ hl.window_rule({
 
 -- File pickers
 hl.window_rule({
-    match    = { title = "^(Open File|Location|Open Files|Open Folder|Open|Save|Save As|Export|Import|Choose File|Rename)$" },
+    match    = { title = "^(Pick game to add|Open File|Location|Open Files|Open Folder|Open|Save|Save As|Export|Import|Choose File|Rename)$" },
     float    = true,
     center   = true,
     decorate = false,
@@ -189,4 +189,9 @@ hl.window_rule({
 hl.window_rule({
     match = { class = "^(Vortex)$" },
     suppress_event = "activate",
+})
+
+hl.window_rule({
+    match = { class = "gamescope" },
+    workspace = 5,
 })

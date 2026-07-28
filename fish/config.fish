@@ -17,6 +17,8 @@ if status is-interactive
     # Aliases
     alias aria='hermes'
     alias bat="bat --style=plain"
+    alias cat="bat --style=plain"
+    alias aw="cd /home/axioncs/hermes-webui && ./start.sh"
 
     # Abbrs
     abbr lg lazygit
@@ -47,6 +49,7 @@ if status is-interactive
     abbr i 'sudo pacman -S'
     abbr pu 'sudo pacman -Syu'
     abbr pc 'sudo pacman -Scc'
+    abbr un 'sudo pacman -Rns'
     abbr au 'aria update'
     abbr r reboot
     abbr sn 'sudo nano'
