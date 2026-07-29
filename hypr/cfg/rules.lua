@@ -23,6 +23,11 @@ hl.workspace_rule({
 })
 
 hl.workspace_rule({
+    workspace        = "special:whatsapp",
+    on_created_empty = "elecwhat",
+})
+
+hl.workspace_rule({
     workspace        = "special:equibop",
     on_created_empty = "equibop",
 })

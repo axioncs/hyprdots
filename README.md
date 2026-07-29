@@ -46,7 +46,7 @@ Install with your AUR helper (`paru` recommended). The bundled `install.fish` ha
 | `noto-fonts`, `noto-fonts-cjk`, `noto-fonts-emoji` | extra | Fonts |
 | `ttf-jetbrains-mono-nerd` | extra | Monospace font (Kitty/Starship) |
 
-> Optional (not installed by default): `hayase` (anime torrent client, bound to `SUPER+H`).
+> Optional (not installed by default): `hayase-desktop-bin` (anime torrent client), `elecwhat-bin` (WhatsApp), `discord` (Discord)
 
 ---
 
@@ -83,7 +83,7 @@ See `install.fish --help` for all flags.
 | `SUPER + E` | File Manager (Yazi) |
 | `SUPER + W` | Browser (Zen) |
 | `SUPER + C` | Editor (Zed) |
-| `SUPER + H` | Hayase (optional, not a core dep) |
+| `SUPER + H` | Hayase |
 | `CTRL + SUPER + A` | Hypr-Lens |
 | `CTRL + SUPER + Z` | Hypr-OCR |
 | `ALT + A` | Trigger Aria (local AI assistant, if running) |
@@ -94,6 +94,7 @@ See `install.fish --help` for all flags.
 |---------|--------|
 | `SUPER + D` | Discord |
 | `SUPER + ALT + D` | Equibop |
+| `SUPER + Shift + D` | WhatsApp |
 | `SUPER + S` | Spotify |
 | `SUPER + SHIFT + S` | VPN |
 | `SUPER + G` | Steam |
@@ -145,7 +146,7 @@ See `install.fish --help` for all flags.
 |---------|--------|
 | `ALT + Space` | Launcher |
 | `SUPER + I` | Settings |
-| `SUPER + A` | Control center |
+| `SUPER + Space` | Control center |
 | `SUPER + SHIFT + A` | Control center (system) |
 | `SUPER + SHIFT + W` | Wallhaven browser |
 | `SUPER + N` | Control center (notifications) |
