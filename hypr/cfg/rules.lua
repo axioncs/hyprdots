@@ -49,9 +49,7 @@ hl.workspace_rule({
 
 hl.workspace_rule({
     workspace = "special:aria",
-    on_created_empty =
-    "kitty --class aria-chat --title Aria --override 'background=#000000' --override 'background_opacity=0.85' --override 'font_size=10.0' -e fish -c 'hermes'",
-})
+    on_created_empty = "hermes desktop"})
 
 hl.workspace_rule({
     workspace        = "special:vpn",
@@ -87,12 +85,7 @@ hl.window_rule({
     size      = V.scratchpad_discord_size,
 })
 
--- Aria Chat → special:aria scratchpad
-hl.window_rule({
-    match     = { class = "^aria-chat$" },
-    workspace = "special:aria",
-    maximize  = true,
-})
+
 
 -- Spotify → special:spotify scratchpad
 hl.window_rule({
@@ -161,13 +154,7 @@ hl.window_rule({
     move     = { "monitor_w - window_w - 10", "monitor_h - window_h - 10" },
 })
 
--- Aria Voice Overlay: bottom-right corner, unfocused
-hl.window_rule({
-    match    = { title = "^Aria Voice$" },
-    float    = true,
-    no_focus = true,
-    move     = { "monitor_w - window_w - " .. V.aria_voice_margin, "monitor_h - window_h - " .. V.aria_voice_margin },
-})
+
 
 -- imv: floating image viewer
 hl.window_rule({

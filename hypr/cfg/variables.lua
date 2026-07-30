@@ -59,8 +59,6 @@ V.anim_fade_speed         = 2.5
 -- Special workspaces
 V.scratchpad_discord_size = { 1600, 900 } -- fixed px (matches your window rule)
 V.scratchpad_spotify_size = { "80%", "85%" }
-V.scratchpad_aria_size    = { 1344, 900 }
-V.aria_voice_margin       = 20 -- margin for voice overlay in bottom-right
 
 -- Misc
 V.volume_step             = 2 -- percent per media key press

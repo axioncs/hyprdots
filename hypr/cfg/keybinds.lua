@@ -37,7 +37,6 @@ hl.bind("CTRL + " .. mod .. " + Z", hl.dsp.exec_cmd("~/.config/hypr/bin/hypr-ocr
 
 --  Aria AI Assistant
 hl.bind(mod .. " + A", hl.dsp.workspace.toggle_special("aria"))
-hl.bind("ALT + A", hl.dsp.exec_cmd("echo 'start' | nc -N 127.0.0.1 9999"))
 
 --  Special workspaces (scratchpads)
 hl.bind(mod .. " + D", hl.dsp.workspace.toggle_special("discord"))

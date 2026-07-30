@@ -86,7 +86,6 @@ See `install.fish --help` for all flags.
 | `SUPER + H` | Hayase |
 | `CTRL + SUPER + A` | Hypr-Lens |
 | `CTRL + SUPER + Z` | Hypr-OCR |
-| `ALT + A` | Trigger Aria (local AI assistant, if running) |
 
 ### Scratchpads (special workspaces)
 
@@ -95,6 +94,7 @@ See `install.fish --help` for all flags.
 | `SUPER + D` | Discord |
 | `SUPER + ALT + D` | Equibop |
 | `SUPER + Shift + D` | WhatsApp |
+| `SUPER + A` | Hermes |
 | `SUPER + S` | Spotify |
 | `SUPER + SHIFT + S` | VPN |
 | `SUPER + G` | Steam |
