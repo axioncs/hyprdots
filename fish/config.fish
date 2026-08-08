@@ -18,7 +18,6 @@ if status is-interactive
     alias aria='hermes'
     alias bat="bat --style=plain"
     alias cat="bat --style=plain"
-    alias aw="cd /home/axioncs/hermes-webui && ./start.sh"
 
     # Abbrs
     abbr lg lazygit
@@ -51,10 +50,11 @@ if status is-interactive
     abbr pc 'sudo pacman -Scc'
     abbr un 'sudo pacman -Rns'
     abbr au 'aria update'
+    abbr ad 'aria desktop'
     abbr r reboot
     abbr sn 'sudo nano'
     abbr s sudo
-    abbr k pkill
+    abbr k pkill -9
 end
 
 fish_add_path /home/axioncs/.spicetify
