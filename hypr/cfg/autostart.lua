@@ -1,10 +1,9 @@
 hl.on("hyprland.start", function()
     hl.exec_cmd("noctalia")
     hl.exec_cmd("systemctl --user start hyprland-session.target")
-    -- Auto-mount USB drives; route popups through noctalia's notification daemon
+    hl.exec_cmd("snappy-switcher --daemon")
     hl.exec_cmd("udiskie --no-tray --automount --notify &")
 end)
-hl.exec_cmd("snappy-switcher --daemon")
 hl.on("hyprland.shutdown", function()
     os.execute("systemctl --user stop hyprland-session.target && sleep 0.1")
 end)
