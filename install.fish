@@ -9,7 +9,7 @@
 
 set -g REPO (dirname (realpath (status filename)))
 set -g CONFIG "$HOME/.config"
-set -g HYPRLAND_DEPS hyprland noctalia-git snappy-switcher kitty zen-browser zed helix fish starship yazi btop fastfetch mpv aria2 yt-dlp spicetify-cli grimblast-git tesseract wireplumber papirus-icon-theme bibata-cursor-theme-bin noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd
+set -g HYPRLAND_DEPS hyprland noctalia snappy-switcher kitty zen-browser zed helix fish starship yazi btop fastfetch mpv aria2 yt-dlp spicetify-cli grimblast-git tesseract wireplumber papirus-icon-theme bibata-cursor-theme-bin noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-jetbrains-mono-nerd
 set -g BUILD_DEPS base-devel git
 
 # Items managed by this repo (dir or file, relative to REPO)

@@ -15,11 +15,9 @@
 --convert-subs srt
 --compat-options no-keep-subs
 
--o "~/Videos/yt-dlp/%(playlist_title|Videos)s/%(playlist_index|)s%(title)s [%(id)s].%(ext)s"
+-o "~/Videos/yt-dlp/%(playlist_title|Videos)s/%(playlist_index&{} - |)s%(title)s [%(id)s].%(ext)s"
 
 --ignore-errors
 --download-archive ~/.config/yt-dlp/archive.txt
 
 --sponsorblock-remove all
-
---concurrent-fragments 16

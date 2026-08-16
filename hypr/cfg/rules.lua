@@ -49,7 +49,7 @@ hl.workspace_rule({
 
 hl.workspace_rule({
     workspace = "special:aria",
-    on_created_empty = "hermes desktop"})
+    on_created_empty = "~/.hermes/hermes-agent/venv/bin/hermes desktop"})
 
 hl.workspace_rule({
     workspace        = "special:vpn",

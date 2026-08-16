@@ -101,10 +101,10 @@ hl.bind(mod2 .. " + Q", hl.dsp.window.kill())
 hl.bind(mod .. " + mouse:274", hl.dsp.window.close(), { mouse = true })
 
 --  Workspace: switch
-hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mod2 .. " + mouse_down", hl.dsp.window.move({ workspace = "e-1" }))
-hl.bind(mod2 .. " + mouse_up", hl.dsp.window.move({ workspace = "e+1" }))
+hl.bind(mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mod2 .. " + mouse_down", hl.dsp.window.move({ workspace = "e+1" }))
+hl.bind(mod2 .. " + mouse_up", hl.dsp.window.move({ workspace = "e-1" }))
 
 for i = 1, 9 do
     hl.bind(mod .. " + " .. i, hl.dsp.focus({ workspace = i }))
@@ -124,8 +124,6 @@ hl.bind(mod .. " + X", hl.dsp.window.resize(), { mouse = true })
 -- Window actions
 hl.bind(mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-hl.bind(mod .. " + SHIFT + mouse_down", hl.dsp.focus({ direction = "left" }))
-hl.bind(mod .. " + SHIFT + mouse_up", hl.dsp.focus({ direction = "right" }))
 hl.bind(mod .. " + left", hl.dsp.focus({ direction = "left" }))
 hl.bind(mod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mod .. " + up", hl.dsp.focus({ direction = "up" }))
