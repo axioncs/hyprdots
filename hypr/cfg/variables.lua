@@ -58,7 +58,6 @@ V.anim_fade_speed         = 2.5
 
 -- Special workspaces
 V.scratchpad_discord_size = { 1600, 900 } -- fixed px (matches your window rule)
-V.scratchpad_spotify_size = { "80%", "85%" }
 
 -- Misc
 V.volume_step             = 2 -- percent per media key press

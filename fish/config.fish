@@ -55,6 +55,7 @@ if status is-interactive
     abbr sn 'sudo nano'
     abbr s sudo
     abbr k pkill -9
+    abbr yt yt-dlp
 end
 
 fish_add_path /home/axioncs/.spicetify

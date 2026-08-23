@@ -91,8 +91,6 @@ hl.window_rule({
 hl.window_rule({
     match     = { class = "^(Spotify|spotify)$" },
     workspace = "special:spotify",
-    float     = true,
-    size      = V.scratchpad_spotify_size,
 })
 
 -- Steam → special:steam scratchpad
